@@ -70,12 +70,10 @@ environment = SubResource("Environment_hmnte")
 [node name="Grabbable_example" parent="." instance=ExtResource("1_vrksp")]
 transform = Transform3D(0.0763536, 0, 0.997081, 0, 1, 0, -0.997081, 0, 0.0763536, 3.42549, 2.36788, 3)
 collision_mask = 3
-linear_damp = 0.0
 
 [node name="Grabbable_example2" parent="." instance=ExtResource("1_vrksp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82772, 2.91708, 0)
 collision_mask = 3
-linear_damp = 0.0
 
 [node name="GrabHandle" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36788, 3)

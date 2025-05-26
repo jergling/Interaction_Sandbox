@@ -15,7 +15,6 @@ height = 0.6
 
 [node name="Grabbable_example" type="RigidBody3D"]
 collision_layer = 2
-linear_damp = 5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_6k8ke")
