@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://bi7j1nj1xh63r"]
+
+[ext_resource type="Script" path="res://grabby_camera.gd" id="1_8tuly"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fl75m"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_deq3n"]
+sky_material = SubResource("ProceduralSkyMaterial_fl75m")
+
+[sub_resource type="Environment" id="Environment_hmnte"]
+background_mode = 2
+sky = SubResource("Sky_deq3n")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_4csfl"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8rob"]
+albedo_color = Color(0.21775, 0.3, 0.159, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4y67k"]
+material = SubResource("StandardMaterial3D_b8rob")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_witag"]
+size = Vector3(10, 1, 10)
+
+[node name="ClickAndDrag" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 8.47414, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hmnte")
+
+[node name="GrabTarget" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36788, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GrabTarget"]
+mesh = SubResource("SphereMesh_4csfl")
+
+[node name="TableSurface" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, -0.487944, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TableSurface"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0.00333405, -2.38419e-07, -0.0035615)
+mesh = SubResource("BoxMesh_4y67k")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TableSurface"]
+shape = SubResource("BoxShape3D_witag")
+
+[node name="GrabbyCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.39924, 0)
+script = ExtResource("1_8tuly")
