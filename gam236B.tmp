@@ -69,13 +69,8 @@ environment = SubResource("Environment_hmnte")
 
 [node name="Grabbable_example" parent="." instance=ExtResource("1_vrksp")]
 transform = Transform3D(0.0763536, 0, 0.997081, 0, 1, 0, -0.997081, 0, 0.0763536, 3.42549, 2.36788, 3)
-collision_mask = 3
-linear_damp = 0.0
-
-[node name="Grabbable_example2" parent="." instance=ExtResource("1_vrksp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82772, 2.91708, 0)
-collision_mask = 3
-linear_damp = 0.0
+linear_damp = 0.3
+angular_damp = 13.676
 
 [node name="GrabHandle" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36788, 3)
@@ -91,7 +86,6 @@ mesh = SubResource("SphereMesh_4csfl")
 
 [node name="TableSurface" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, -0.487944, 0)
-collision_mask = 3
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TableSurface"]
@@ -104,7 +98,6 @@ shape = SubResource("BoxShape3D_witag")
 
 [node name="Platform" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66158, 0.895087, 1.41675)
-collision_mask = 3
 metadata/_edit_group_ = true
 
 [node name="Mesh" type="MeshInstance3D" parent="Platform"]
