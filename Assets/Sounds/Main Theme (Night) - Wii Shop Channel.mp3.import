@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://msn64ro1g6hv"
-path="res://.godot/imported/Main Theme (Night) - Wii Shop Channel.mp3-5af4a5883af98d086969423e3db83f4c.mp3str"
+path="res://.godot/imported/Main Theme (Night) - Wii Shop Channel.mp3-c401b99430daa5456e197d7f2c1eb8be.mp3str"
 
 [deps]
 
-source_file="res://Interaction_Sandbox/Assets/Sounds/Main Theme (Night) - Wii Shop Channel.mp3"
-dest_files=["res://.godot/imported/Main Theme (Night) - Wii Shop Channel.mp3-5af4a5883af98d086969423e3db83f4c.mp3str"]
+source_file="res://Assets/Sounds/Main Theme (Night) - Wii Shop Channel.mp3"
+dest_files=["res://.godot/imported/Main Theme (Night) - Wii Shop Channel.mp3-c401b99430daa5456e197d7f2c1eb8be.mp3str"]
 
 [params]
 

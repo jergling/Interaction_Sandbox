@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dw6gqlpebyqso"
-path="res://.godot/imported/SoftHardSurface_Matcube.gltf-0a1211b5ff44306f1c565a50cb43779f.scn"
+path="res://.godot/imported/SoftHardSurface_Matcube.gltf-577b346686115f5a7f80b23ec8bed5c9.scn"
 
 [deps]
 
-source_file="res://Interaction_Sandbox/Assets/Models/SoftHardSurface_Matcube.gltf"
-dest_files=["res://.godot/imported/SoftHardSurface_Matcube.gltf-0a1211b5ff44306f1c565a50cb43779f.scn"]
+source_file="res://Assets/Models/SoftHardSurface_Matcube.gltf"
+dest_files=["res://.godot/imported/SoftHardSurface_Matcube.gltf-577b346686115f5a7f80b23ec8bed5c9.scn"]
 
 [params]
 

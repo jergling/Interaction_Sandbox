@@ -1,10 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bi7j1nj1xh63r"]
+[gd_scene load_steps=15 format=3 uid="uid://bi7j1nj1xh63r"]
 
 [ext_resource type="Script" path="res://grabby_camera.gd" id="1_8tuly"]
 [ext_resource type="PackedScene" uid="uid://buke8254orur0" path="res://grabbable_example.tscn" id="1_vrksp"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_s2don"]
-size = Vector3(31.9005, 1, 27.5413)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fl75m"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -51,26 +48,15 @@ size = Vector3(1, 0.2, 1)
 
 [node name="ClickAndDrag" type="Node3D"]
 
-[node name="HoldPlane" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.92824, 0)
-collision_layer = 8
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HoldPlane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.486191, 0, -0.192928)
-shape = SubResource("BoxShape3D_s2don")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 13.5918, 0)
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 8.47414, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hmnte")
 
 [node name="Grabbable_example" parent="." instance=ExtResource("1_vrksp")]
-transform = Transform3D(0.0763536, 0, 0.997081, 0, 1, 0, -0.997081, 0, 0.0763536, 3.42549, 2.36788, 3)
-linear_damp = 0.3
-angular_damp = 13.676
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36788, 3)
 
 [node name="GrabHandle" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36788, 3)
@@ -110,5 +96,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00439644, 0.00375259, 0.00
 shape = SubResource("BoxShape3D_cchfx")
 
 [node name="GrabbyCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.779568, 0.626318, 0, -0.626318, 0.779568, 0, 8.06573, 8.54716)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.39924, 0)
 script = ExtResource("1_8tuly")

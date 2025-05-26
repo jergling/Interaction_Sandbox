@@ -1,10 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://buke8254orur0"]
+[gd_scene load_steps=5 format=3 uid="uid://buke8254orur0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6k8ke"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5cfx5"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fhrc"]
+transparency = 1
+albedo_color = Color(0.4, 1, 0, 0.490196)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tprx4"]
+material = SubResource("StandardMaterial3D_4fhrc")
+radius = 0.3
+height = 0.6
+
 [node name="Grabbable_example" type="RigidBody3D"]
+collision_layer = 2
+linear_damp = 5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_6k8ke")
@@ -13,3 +24,7 @@ shape = SubResource("BoxShape3D_6k8ke")
 mesh = SubResource("BoxMesh_5cfx5")
 
 [node name="PhysicsHandle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PhysicsHandle"]
+mesh = SubResource("SphereMesh_tprx4")
