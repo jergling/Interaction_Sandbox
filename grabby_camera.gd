@@ -12,8 +12,8 @@ const CURSORLIFT : Vector3 = Vector3(0,3,0)
 const LIFTMASK = 0b00000000_00000000_00000000_00001000
 const DRAGGABLEMASK = 0b00000000_00000000_00000000_00000010
 
-const DRAG_P : float = 25.0
-const DRAG_D : float = 50.0
+const DRAG_P : float = 50.0
+const DRAG_D : float = 80.0
 
 func _input(event):
 	if event is InputEventMouseButton:
