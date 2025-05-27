@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b561t0mrnk6jq"]
+
+[ext_resource type="Script" path="res://tossman.gd" id="1_cn4i7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_idaiq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qa2je"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qtl0t"]
+material = SubResource("StandardMaterial3D_qa2je")
+
+[node name="Tossman" type="CharacterBody3D"]
+script = ExtResource("1_cn4i7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0116, 0)
+shape = SubResource("CapsuleShape3D_idaiq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01113, 0)
+mesh = SubResource("CapsuleMesh_qtl0t")
+
+[node name="FootPos" type="Node3D" parent="."]
+
+[node name="HeadPos" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70886, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
