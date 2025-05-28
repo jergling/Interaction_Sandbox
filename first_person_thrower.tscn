@@ -1,6 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2cqpbrumelnk"]
+[gd_scene load_steps=12 format=3 uid="uid://b2cqpbrumelnk"]
 
+[ext_resource type="Script" path="res://global_esc_menu.gd" id="1_ipt1o"]
 [ext_resource type="PackedScene" uid="uid://b561t0mrnk6jq" path="res://tossman.tscn" id="1_ke7ld"]
+[ext_resource type="Texture2D" uid="uid://d1tumw3esx268" path="res://Assets/Images/IR_1484.jpg" id="2_2inlm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qt3fe"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -32,6 +34,13 @@ material = SubResource("StandardMaterial3D_irc3n")
 
 [node name="FirstPersonThrower" type="Node3D"]
 
+[node name="EscapeMenu" type="CanvasLayer" parent="."]
+script = ExtResource("1_ipt1o")
+
+[node name="Sprite2D" type="Sprite2D" parent="EscapeMenu"]
+position = Vector2(283, 406)
+texture = ExtResource("2_2inlm")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 17.7023, 0)
 shadow_enabled = true
@@ -56,12 +65,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.923679, 3.00606, 0.32564)
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 8)
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+[node name="ReferenceBox" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.494097, 0)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ReferenceBox"]
 mesh = SubResource("BoxMesh_1j7ac")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReferenceBox"]
 shape = SubResource("BoxShape3D_kbdey")
+
+[node name="ReferenceBox2" type="StaticBody3D" parent="."]
+transform = Transform3D(4.91214, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.494097, 6.96779)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ReferenceBox2"]
+mesh = SubResource("BoxMesh_1j7ac")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReferenceBox2"]
+shape = SubResource("BoxShape3D_kbdey")
+
+[node name="ReferenceBox3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.07638, 5.80704, 0.494097, 6.96779)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ReferenceBox3"]
+mesh = SubResource("BoxMesh_1j7ac")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReferenceBox3"]
+shape = SubResource("BoxShape3D_kbdey")
+
+[node name="ReferenceBox4" type="StaticBody3D" parent="."]
+transform = Transform3D(0.860802, 0, 0, 0, 2.38175, 0, 0, 0, 1, 5.80704, 1.29324, -0.328185)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ReferenceBox4"]
+mesh = SubResource("BoxMesh_1j7ac")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReferenceBox4"]
+shape = SubResource("BoxShape3D_kbdey")
+
+[connection signal="closeMenu" from="EscapeMenu" to="Tossman" method="_on_close_menu"]
+[connection signal="openMenu" from="EscapeMenu" to="Tossman" method="_on_open_menu"]

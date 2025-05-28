@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw1nxdcvnog5r"]
+
+[ext_resource type="Script" path="res://global_esc_menu.gd" id="1_g6b6g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f0pt3"]
+
+[node name="GlobalEscMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g6b6g")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(202, 312)
+scale = Vector2(298.5, 449.5)
+mesh = SubResource("BoxMesh_f0pt3")
