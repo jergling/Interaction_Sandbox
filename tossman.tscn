@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b561t0mrnk6jq"]
+[gd_scene load_steps=7 format=3 uid="uid://b561t0mrnk6jq"]
 
 [ext_resource type="Script" path="res://tossman.gd" id="1_cn4i7"]
 
@@ -10,6 +10,10 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qtl0t"]
 material = SubResource("StandardMaterial3D_qa2je")
 
+[sub_resource type="PrismMesh" id="PrismMesh_0vvth"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8t3w1"]
+
 [node name="Tossman" type="CharacterBody3D"]
 script = ExtResource("1_cn4i7")
 
@@ -19,6 +23,7 @@ shape = SubResource("CapsuleShape3D_idaiq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01113, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_qtl0t")
 
 [node name="FootPos" type="Node3D" parent="."]
@@ -26,4 +31,16 @@ mesh = SubResource("CapsuleMesh_qtl0t")
 [node name="HeadPos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70886, 0)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HeadPos"]
+transform = Transform3D(0.159196, 0, 0, 0, -6.50192e-09, 0.199324, 0, -0.148747, -8.71273e-09, 0, 0, 0.16534)
+mesh = SubResource("PrismMesh_0vvth")
+
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00868845, 1.72929, -0.00412536)
+
+[node name="RightHandTarget" type="Node3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475865, -0.246012, -0.440511)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D/RightHandTarget"]
+transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0, 0)
+mesh = SubResource("SphereMesh_8t3w1")
