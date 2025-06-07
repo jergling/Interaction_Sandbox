@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b561t0mrnk6jq"]
 
-[ext_resource type="Script" path="res://tossman.gd" id="1_cn4i7"]
+[ext_resource type="Script" uid="uid://ddhhlfgevj6j8" path="res://tossman.gd" id="1_cn4i7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_idaiq"]
 

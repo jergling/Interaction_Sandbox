@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://bi7j1nj1xh63r"]
 
-[ext_resource type="Script" path="res://grabby_camera.gd" id="1_8tuly"]
-[ext_resource type="Script" path="res://ClickAndDrag.gd" id="1_bkjwy"]
+[ext_resource type="Script" uid="uid://dpo15yhenbr0e" path="res://grabby_camera.gd" id="1_8tuly"]
+[ext_resource type="Script" uid="uid://cy7735ondhpaj" path="res://ClickAndDrag.gd" id="1_bkjwy"]
 [ext_resource type="PackedScene" uid="uid://buke8254orur0" path="res://grabbable_example.tscn" id="1_vrksp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s2don"]
