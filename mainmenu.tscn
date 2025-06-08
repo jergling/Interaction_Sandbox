@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvlcqki0xie5y"]
+
+[ext_resource type="Texture2D" uid="uid://cevkiaxl5qbkt" path="res://icon.svg" id="1_cmhrf"]
+[ext_resource type="Script" uid="uid://xury4wmafeoh" path="res://mainmenu.gd" id="1_igs2m"]
+
+[node name="Mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_igs2m")
+scene1 = "res://game_space_1.tscn"
+scene2 = "res://first_person_thrower.tscn"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.303
+anchor_top = 0.303
+anchor_right = 0.682
+anchor_bottom = 0.729
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.304
+offset_top = -118.024
+offset_right = 270.696
+offset_bottom = 113.976
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "High Rolla
+"
+icon = ExtResource("1_cmhrf")
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "SKUFD GMOD SIMULATOR 2004"
+icon = ExtResource("1_cmhrf")
+
+[connection signal="pressed" from="Control/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

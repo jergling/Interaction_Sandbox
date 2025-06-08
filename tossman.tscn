@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b561t0mrnk6jq"]
+[gd_scene load_steps=12 format=3 uid="uid://b561t0mrnk6jq"]
 
 [ext_resource type="Script" uid="uid://ddhhlfgevj6j8" path="res://tossman.gd" id="1_cn4i7"]
+[ext_resource type="Script" uid="uid://boyadtxnci07q" path="res://phys_gun.gd" id="2_1ubkm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_idaiq"]
 
@@ -13,6 +14,20 @@ material = SubResource("StandardMaterial3D_qa2je")
 [sub_resource type="PrismMesh" id="PrismMesh_0vvth"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_8t3w1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ubkm"]
+albedo_color = Color(0, 1, 0.933333, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hqtjv"]
+material = SubResource("StandardMaterial3D_1ubkm")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqtjv"]
+albedo_color = Color(1, 0.27, 0.27, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_twn1e"]
+material = SubResource("StandardMaterial3D_hqtjv")
+size = Vector3(0.1, 0.1, 0.1)
 
 [node name="Tossman" type="CharacterBody3D"]
 script = ExtResource("1_cn4i7")
@@ -44,3 +59,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475865, -0.246012, -0.44051
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D/RightHandTarget"]
 transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0, 0)
 mesh = SubResource("SphereMesh_8t3w1")
+
+[node name="PhysGun" type="Node3D" parent="Camera3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("2_1ubkm")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D/PhysGun"]
+target_position = Vector3(0, 0, 10)
+collision_mask = 7
+
+[node name="CastHitMark" type="Node3D" parent="Camera3D/PhysGun"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00868845, 1.72929, -0.00412536)
+top_level = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D/PhysGun/CastHitMark"]
+mesh = SubResource("BoxMesh_hqtjv")
+
+[node name="HoldTarget" type="Node3D" parent="Camera3D/PhysGun"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D/PhysGun/HoldTarget"]
+mesh = SubResource("BoxMesh_twn1e")

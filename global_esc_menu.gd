@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@export var mainmenuscene : PackedScene
 var inMenu : bool = false
 signal openMenu
 signal closeMenu
@@ -22,3 +23,7 @@ func _process(delta: float) -> void:
 			closeMenu.emit()
 			self.visible = false
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_packed(mainmenuscene)
